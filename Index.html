@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lumière Labs — AI Tools & Digital Content Creation</title>
+  <meta name="description" content="Lumière Labs — AI tools, digital content creation, travel, marketing, software, products, services and opportunities.">
+  <meta name="keywords" content="Lumière Labs, AI tools, digital content, travel, marketing, software, Trip.com, Alawao, Express Solutions, Lumen Note AI">
+  <meta name="author" content="Lumière Labs">
+  <meta name="theme-color" content="#f7fbff">
+
+  <meta property="og:title" content="Lumière Labs — AI Tools & Digital Content Creation">
+  <meta property="og:description" content="Travel • Marketing • Software">
+  <meta property="og:type" content="website">
+
+  <link rel="canonical" href="https://lumiere-labs.vercel.app/">
+
+  <style>
+    :root{
+      --bg:#f7fbff;
+      --bg2:#eef7ff;
+      --white:#ffffff;
+      --text:#102033;
+      --muted:#5f7185;
+      --blue:#00a8ff;
+      --cyan:#00d4ff;
+      --violet:#7657ff;
+      --mauve:#b65cff;
+      --green:#24b47e;
+      --line:rgba(0,168,255,.28);
+      --border:rgba(25,105,170,.14);
+      --shadow:0 14px 45px rgba(31,90,130,.10);
+      --radius:22px;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%,rgba(0,212,255,.08),transparent 28%),
+        radial-gradient(circle at 85% 18%,rgba(182,92,255,.07),transparent 28%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .skip-link{
+      position:fixed;
+      left:12px;
+      top:-60px;
+      z-index:9999;
+      background:#102033;
+      color:white;
+      padding:10px 16px;
+      border-radius:10px;
+    }
+
+    .skip-link:focus{
+      top:12px;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(0,120,200,.10);
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      min-height:72px;
+      padding:0 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      font-weight:900;
+      letter-spacing:.08em;
+      font-size:1.08rem;
+      white-space:nowrap;
+      background:linear-gradient(90deg,var(--cyan),var(--violet),var(--mauve));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+    }
+
+    .nav-links a{
+      font-size:.9rem;
+      font-weight:700;
+      color:#41566b;
+      transition:.25s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--blue);
+    }
+
+    .language-select{
+      border:1px solid rgba(0,150,230,.22);
+      background:white;
+      color:#20354a;
+      border-radius:10px;
+      padding:8px 10px;
+      font-weight:700;
+      cursor:pointer;
+      outline:none;
+    }
+
+    .menu-btn{
+      display:none;
+      width:44px;
+      height:44px;
+      border:1px solid rgba(0,150,230,.18);
+      border-radius:12px;
+      background:white;
+      cursor:pointer;
+      font-size:1.35rem;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero{
+      position:relative;
+      min-height:690px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      isolation:isolate;
+      background:
+        linear-gradient(180deg,rgba(247,251,255,.90),rgba(239,248,255,.94));
+    }
+
+    .hero-inner{
+      width:min(1200px,100%);
+      margin:auto;
+      padding:100px 22px 110px;
+      position:relative;
+      z-index:4;
+      text-align:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 14px;
+      border:1px solid rgba(0,168,255,.20);
+      background:rgba(255,255,255,.78);
+      border-radius:999px;
+      color:#426176;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      box-shadow:0 8px 28px rgba(0,100,170,.07);
+    }
+
+    .hero-title{
+      margin:24px auto 12px;
+      max-width:1100px;
+      font-size:clamp(3.2rem,9vw,7.8rem);
+      line-height:.92;
+      font-weight:950;
+      letter-spacing:-.065em;
+      background:linear-gradient(
+        90deg,
+        #00bfff 0%,
+        #007cff 30%,
+        #7657ff 65%,
+        #bd5cff 100%
+      );
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      filter:drop-shadow(0 0 22px rgba(0,174,255,.18));
+    }
+
+    .hero-subtitle{
+      font-size:clamp(1rem,2vw,1.28rem);
+      font-weight:850;
+      letter-spacing:.10em;
+      color:#29445c;
+      margin-top:18px;
+    }
+
+    .hero-subline{
+      margin-top:8px;
+      color:#64788b;
+      font-size:.95rem;
+    }
+
+    .hero-actions{
+      margin-top:34px;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      min-height:46px;
+      padding:11px 20px;
+      border-radius:13px;
+      font-weight:800;
+      font-size:.9rem;
+      border:1px solid rgba(0,140,220,.22);
+      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(0,174,255,.55);
+      box-shadow:0 8px 28px rgba(0,160,240,.14);
+    }
+
+    .btn-primary{
+      color:white;
+      border:0;
+      background:linear-gradient(100deg,#009fe9,#7056ff);
+      box-shadow:0 10px 28px rgba(0,145,230,.18);
+    }
+
+    .btn-light{
+      background:rgba(255,255,255,.82);
+      color:#234058;
+    }
+
+    /* =========================
+       CIRCUIT SYSTEM
+    ========================== */
+
+    .circuit-layer{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      overflow:hidden;
+    }
+
+    .trace{
+      position:absolute;
+      height:2px;
+      border-radius:10px;
+      background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,190,255,.75),
+        rgba(118,87,255,.75),
+        rgba(182,92,255,.50),
+        transparent
+      );
+      box-shadow:
+        0 0 7px rgba(0,190,255,.30),
+        0 0 15px rgba(118,87,255,.14);
+      opacity:.72;
+      animation:tracePulse 5s ease-in-out infinite;
+    }
+
+    .trace::before,
+    .trace::after{
+      content:"";
+      position:absolute;
+      width:8px;
+      height:8px;
+      top:-3px;
+      border-radius:50%;
+      background:#fff;
+      border:2px solid var(--blue);
+      box-shadow:0 0 9px rgba(0,190,255,.65);
+    }
+
+    .trace::before{left:15%}
+    .trace::after{
+      right:7%;
+      border-color:var(--violet);
+      box-shadow:0 0 9px rgba(118,87,255,.65);
+    }
+
+    .trace-1{width:310px;top:19%;left:-35px;transform:rotate(13deg)}
+    .trace-2{width:440px;top:31%;right:-100px;transform:rotate(-12deg);animation-delay:1s}
+    .trace-3{width:280px;top:61%;left:3%;transform:rotate(-7deg);animation-delay:2s}
+    .trace-4{width:390px;top:72%;right:1%;transform:rotate(8deg);animation-delay:1.5s}
+    .trace-5{width:230px;top:43%;left:23%;transform:rotate(90deg);opacity:.46}
+    .trace-6{width:260px;top:48%;right:24%;transform:rotate(90deg);opacity:.46;animation-delay:2.5s}
+
+    .node{
+      position:absolute;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:white;
+      border:2px solid var(--green);
+      box-shadow:0 0 12px rgba(36,180,126,.65);
+      animation:nodePulse 3.5s ease-in-out infinite;
+    }
+
+    .node-1{top:23%;left:18%}
+    .node-2{top:35%;right:18%;animation-delay:1s}
+    .node-3{top:69%;left:12%;animation-delay:2s}
+    .node-4{top:76%;right:14%;animation-delay:1.5s}
+
+    @keyframes tracePulse{
+      0%,100%{opacity:.42}
+      50%{opacity:.82}
+    }
+
+    @keyframes nodePulse{
+      0%,100%{transform:scale(.85);opacity:.55}
+      50%{transform:scale(1.25);opacity:1}
+    }
+
+    /* =========================
+       CIRCUIT SEPARATORS
+    ========================== */
+
+    .circuit-divider{
+      height:58px;
+      position:relative;
+      overflow:hidden;
+      background:var(--bg);
+      pointer-events:none;
+    }
+
+    .circuit-divider::before,
+    .circuit-divider::after{
+      content:"";
+      position:absolute;
+      top:50%;
+      height:1px;
+      background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,168,255,.45),
+        rgba(118,87,255,.48),
+        rgba(182,92,255,.40),
+        transparent
+      );
+    }
+
+    .circuit-divider::before{
+      width:46%;
+      left:0;
+    }
+
+    .circuit-divider::after{
+      width:46%;
+      right:0;
+    }
+
+    .divider-node{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      border:2px solid var(--blue);
+      background:white;
+      box-shadow:0 0 15px rgba(0,168,255,.45);
+    }
+
+    .divider-node::before,
+    .divider-node::after{
+      content:"";
+      position:absolute;
+      top:5px;
+      width:65px;
+      height:1px;
+      background:linear-gradient(90deg,var(--blue),transparent);
+    }
+
+    .divider-node::before{
+      right:11px;
+      transform:rotate(25deg);
+      transform-origin:right;
+    }
+
+    .divider-node::after{
+      left:11px;
+      transform:rotate(-25deg);
+      transform-origin:left;
+      background:linear-gradient(90deg,transparent,var(--violet));
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section{
+      position:relative;
+      max-width:1200px;
+      margin:auto;
+      padding:70px 22px;
+    }
+
+    .section-heading{
+      max-width:700px;
+      margin-bottom:34px;
+    }
+
+    .section-kicker{
+      color:var(--blue);
+      font-size:.75rem;
+      font-weight:900;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      margin-bottom:7px;
+    }
+
+    .section-title{
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.05;
+      letter-spacing:-.035em;
+    }
+
+    .section-text{
+      color:var(--muted);
+      margin-top:12px;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      position:relative;
+      padding:25px;
+      background:rgba(255,255,255,.83);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      transition:.3s ease;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      border:1px solid transparent;
+      background:linear-gradient(
+        120deg,
+        rgba(0,212,255,.24),
+        transparent 35%,
+        rgba(182,92,255,.20)
+      ) border-box;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+      opacity:.55;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(0,174,255,.34);
+      box-shadow:
+        0 18px 45px rgba(25,100,150,.12),
+        0 0 20px rgba(0,190,255,.07);
+    }
+
+    .card-icon{
+      width:48px;
+      height:48px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(118,87,255,.10));
+      border:1px solid rgba(0,170,240,.15);
+      font-size:1.35rem;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      font-size:1.18rem;
+      margin-bottom:8px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .card-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:20px;
+    }
+
+    .small-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:9px 12px;
+      border-radius:10px;
+      font-size:.78rem;
+      font-weight:800;
+      border:1px solid rgba(0,160,230,.23);
+      background:white;
+      color:#28475f;
+      transition:.25s;
+    }
+
+    .small-btn:hover{
+      border-color:rgba(0,160,230,.65);
+      box-shadow:0 0 15px rgba(0,190,255,.10);
+    }
+
+    .small-btn.primary{
+      background:linear-gradient(100deg,#009fe9,#7056ff);
+      color:white;
+      border-color:transparent;
+    }
+
+    .small-btn.whatsapp{
+      border-color:rgba(36,180,126,.34);
+      color:#16805a;
+    }
+
+    .small-btn.telegram{
+      border-color:rgba(35,145,205,.28);
+      color:#1477a8;
+    }
+
+    /* =========================
+       FEATURED LUMEN
+    ========================== */
+
+    .featured{
+      padding:38px;
+      border-radius:28px;
+      background:
+        linear-gradient(135deg,rgba(239,249,255,.96),rgba(248,243,255,.96));
+      border:1px solid rgba(0,150,230,.16);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .featured::after{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      border:1px solid rgba(118,87,255,.20);
+      border-radius:50%;
+      right:-100px;
+      top:-100px;
+      box-shadow:
+        0 0 0 20px rgba(0,212,255,.025),
+        0 0 0 45px rgba(118,87,255,.025);
+    }
+
+    .featured-content{
+      position:relative;
+      z-index:2;
+      max-width:760px;
+    }
+
+    .featured h3{
+      font-size:clamp(1.8rem,4vw,2.8rem);
+      margin-bottom:10px;
+    }
+
+    .campaign{
+      display:inline-flex;
+      margin:0 0 15px;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(118,87,255,.08);
+      color:#6650d7;
+      border:1px solid rgba(118,87,255,.17);
+      font-size:.76rem;
+      font-weight:900;
+    }
+
+    /* =========================
+       BLOG
+    ========================== */
+
+    .blog-card{
+      min-height:220px;
+    }
+
+    .blog-date{
+      color:#72879a;
+      font-size:.75rem;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .about-panel{
+      padding:28px;
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .about-panel ul{
+      list-style:none;
+      display:grid;
+      gap:11px;
+      margin-top:18px;
+    }
+
+    .about-panel li{
+      color:#52687b;
+      font-size:.92rem;
+    }
+
+    .about-panel li::before{
+      content:"✦";
+      color:var(--violet);
+      margin-right:9px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .contact-card{
+      padding:24px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-card h3{
+      margin-bottom:7px;
+    }
+
+    .contact-card p{
+      color:var(--muted);
+      font-size:.88rem;
+      margin-bottom:15px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      position:relative;
+      border-top:1px solid rgba(0,130,210,.10);
+      background:#f0f8fd;
+      padding:42px 22px 28px;
+      overflow:hidden;
+    }
+
+    .footer-inner{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:25px;
+      flex-wrap:wrap;
+    }
+
+    .footer-brand{
+      font-size:1.15rem;
+      font-weight:900;
+      background:linear-gradient(90deg,var(--cyan),var(--violet),var(--mauve));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .footer-copy{
+      color:#718597;
+      font-size:.8rem;
+      margin-top:5px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .footer-links span{
+      color:#708395;
+      font-size:.78rem;
+    }
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    .mobile-menu{
+      display:none;
+      padding:15px 22px 22px;
+      background:white;
+      border-top:1px solid rgba(0,130,210,.08);
+    }
+
+    .mobile-menu.open{
+      display:block;
+    }
+
+    .mobile-menu a{
+      display:block;
+      padding:11px 0;
+      font-weight:750;
+      color:#38536a;
+      border-bottom:1px solid rgba(0,130,210,.07);
+    }
+
+    .mobile-language{
+      margin-top:14px;
+    }
+
+    .mobile-language-title{
+      font-size:.75rem;
+      font-weight:900;
+      color:#708395;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      margin-bottom:9px;
+    }
+
+    .language-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:7px;
+    }
+
+    .lang-btn{
+      border:1px solid rgba(0,140,220,.18);
+      background:#f8fcff;
+      color:#3e566b;
+      border-radius:9px;
+      padding:8px;
+      font-size:.78rem;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .lang-btn.active{
+      background:linear-gradient(100deg,#009fe9,#7056ff);
+      color:white;
+      border-color:transparent;
+    }
+
+    /* =========================
+       REVEAL
+    ========================== */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:900px){
+      .nav-links,
+      .desktop-language{
+        display:none;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .about-box{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:640px){
+      .nav{
+        min-height:64px;
+        padding:0 15px;
+      }
+
+      .brand{
+        font-size:.92rem;
+      }
+
+      .hero{
+        min-height:650px;
+      }
+
+      .hero-inner{
+        padding:82px 17px 90px;
+      }
+
+      .hero-title{
+        font-size:clamp(3rem,16vw,5rem);
+        letter-spacing:-.07em;
+      }
+
+      .hero-subtitle{
+        font-size:.82rem;
+        line-height:1.5;
+        letter-spacing:.06em;
+      }
+
+      .hero-subline{
+        font-size:.84rem;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        max-width:310px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .trace{
+        opacity:.58;
+      }
+
+      .trace-1{width:210px;left:-75px}
+      .trace-2{width:270px;right:-110px}
+      .trace-3{width:210px;left:-65px}
+      .trace-4{width:260px;right:-100px}
+      .trace-5,
+      .trace-6{
+        opacity:.30;
+      }
+
+      section{
+        padding:55px 17px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .featured{
+        padding:25px 20px;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+      }
+
+      .circuit-divider{
+        height:45px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after{
+        animation:none!important;
+        transition:none!important;
+      }
+
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header>
+  <nav class="nav" aria-label="Navegación principal">
+
+    <a href="#top" class="brand">LUMIÈRE LABS</a>
+
+    <div class="nav-links">
+      <a href="#opportunities" data-i18n="nav_opportunities">Oportunidades</a>
+      <a href="#projects" data-i18n="nav_projects">Proyectos</a>
+      <a href="#blog" data-i18n="nav_blog">Blog</a>
+      <a href="#about" data-i18n="nav_about">Nosotros</a>
+      <a href="#contact" data-i18n="nav_contact">Contacto</a>
+    </div>
+
+    <select id="languageSelect" class="language-select desktop-language" aria-label="Idioma">
+      <option value="es">ES</option>
+      <option value="en">EN</option>
+      <option value="fr">FR</option>
+      <option value="it">IT</option>
+      <option value="pt">PT</option>
+      <option value="zh">中文</option>
+    </select>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      ☰
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="#opportunities" data-i18n="nav_opportunities">Oportunidades</a>
+    <a href="#projects" data-i18n="nav_projects">Proyectos</a>
+    <a href="#blog" data-i18n="nav_blog">Blog</a>
+    <a href="#about" data-i18n="nav_about">Nosotros</a>
+    <a href="#contact" data-i18n="nav_contact">Contacto</a>
+
+    <div class="mobile-language">
+      <div class="mobile-language-title" data-i18n="language">Idioma</div>
+
+      <div class="language-grid">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="it">IT</button>
+        <button class="lang-btn" data-lang="pt">PT</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <div id="top" class="hero">
+
+    <div class="circuit-layer" aria-hidden="true">
+      <div class="trace trace-1"></div>
+      <div class="trace trace-2"></div>
+      <div class="trace trace-3"></div>
+      <div class="trace trace-4"></div>
+      <div class="trace trace-5"></div>
+      <div class="trace trace-6"></div>
+
+      <div class="node node-1"></div>
+      <div class="node node-2"></div>
+      <div class="node node-3"></div>
+      <div class="node node-4"></div>
+    </div>
+
+    <div class="hero-inner">
+
+      <div class="eyebrow" data-i18n="hero_eyebrow">
+        Plataforma digital internacional
+      </div>
+
+      <h1 class="hero-title">LUMIÈRE LABS</h1>
+
+      <div class="hero-subtitle">
+        AI TOOLS & DIGITAL CONTENT CREATION
+      </div>
+
+      <div class="hero-subline">
+        Travel • Marketing • Software
+      </div>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero_btn">
+          Explorar proyectos
+        </a>
+
+        <a href="#contact" class="btn btn-light" data-i18n="hero_contact">
+          Conectar
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="circuit-divider" aria-hidden="true">
+    <div class="divider-node"></div>
+  </div>
+
+  <!-- OPPORTUNITIES -->
+  <section id="opportunities" class="reveal">
+
+    <div class="section-heading">
+      <div class="section-kicker" data-i18n="opportunities_kicker">
+        Descubre
+      </div>
+
+      <h2 class="section-title" data-i18n="opportunities_title">
+        Oportunidades y experiencias
+      </h2>
+
+      <p class="section-text" data-i18n="opportunities_text">
+        Una selección de viajes, productos, servicios y plataformas digitales.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <!-- TRIP -->
+      <article class="card">
+        <div class="card-icon">✈️</div>
+
+        <h3>Trip.com</h3>
+
+        <p data-i18n="trip_text">
+          Hoteles, vuelos, viajes y experiencias para descubrir nuevos destinos.
+        </p>
+
+        <div class="card-actions">
+          <a
+            class="small-btn primary"
+            href="https://trip-com-new.vercel.app"
+            target="_blank"
+            rel="noopener"
+            data-i18n="trip_site"
+          >
+            Explorar Trip.com
+          </a>
+
+          <a
+            class="small-btn"
+            href="https://www.trip.com/t/yr7xUFrJJW2"
+            target="_blank"
+            rel="sponsored noopener nofollow"
+            data-i18n="trip_book"
+          >
+            Reservar en Trip.com
+          </a>
+
+          <a
+            class="small-btn whatsapp"
+            href="https://whatsapp.com/channel/0029VbDzJXy8V0tpqJr4qC17"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="small-btn telegram"
+            href="https://t.me/TripViajesHoteles"
+            target="_blank"
+            rel="noopener"
+          >
+            Telegram
+          </a>
+        </div>
+      </article>
+
+      <!-- EXPRESS -->
+      <article class="card">
+        <div class="card-icon">🛍️</div>
+
+        <h3>Express Solutions</h3>
+
+        <p data-i18n="express_text">
+          Selección de productos y compra directa para diferentes necesidades.
+        </p>
+
+        <div class="card-actions">
+          <a
+            class="small-btn primary"
+            href="https://express-solutions.vercel.app"
+            target="_blank"
+            rel="noopener"
+            data-i18n="express_site"
+          >
+            Explorar tienda
+          </a>
+
+          <a
+            class="small-btn"
+            href="https://expresssolutionscuba.com/ref/7923/"
+            target="_blank"
+            rel="sponsored noopener nofollow"
+            data-i18n="express_buy"
+          >
+            Ver productos y comprar
+          </a>
+
+          <a
+            class="small-btn whatsapp"
+            href="https://whatsapp.com/channel/0029VbEIztY59PwLBx6NbA2t"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="small-btn telegram"
+            href="https://t.me/ExpressSolutionsShop"
+            target="_blank"
+            rel="noopener"
+          >
+            Telegram
+          </a>
+        </div>
+      </article>
+
+      <!-- ALAWAO -->
+      <article class="card">
+        <div class="card-icon">🇨🇺</div>
+
+        <h3>Alawao</h3>
+
+        <p data-i18n="alawao_text">
+          Productos y servicios con envíos disponibles a todas las provincias de Cuba.
+        </p>
+
+        <div class="card-actions">
+          <a
+            class="small-btn primary"
+            href="https://alawao-cuba.vercel.app"
+            target="_blank"
+            rel="noopener"
+            data-i18n="alawao_site"
+          >
+            Explorar Alawao
+          </a>
+
+          <a
+            class="small-btn"
+            href="https://alawao.com/tienda/ref/mesaespinosaluzivis@gmail.com/"
+            target="_blank"
+            rel="sponsored noopener nofollow"
+            data-i18n="alawao_buy"
+          >
+            Comprar en Alawao
+          </a>
+
+          <a
+            class="small-btn whatsapp"
+            href="https://whatsapp.com/channel/0029VbDoHnZGpLHIpAyqnf1B"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="small-btn telegram"
+            href="https://t.me/AlawaoTiendasCuba"
+            target="_blank"
+            rel="noopener"
+          >
+            Telegram
+          </a>
+        </div>
+      </article>
+
+      <!-- ALIEXPRESS -->
+      <article class="card">
+        <div class="card-icon">🌐</div>
+
+        <h3>AliExpress</h3>
+
+        <p data-i18n="aliexpress_text">
+          Nuevas oportunidades de productos y compras internacionales.
+        </p>
+
+        <div class="card-actions">
+          <span class="small-btn" aria-disabled="true" data-i18n="coming_soon">
+            Próximamente
+          </span>
+        </div>
+      </article>
+
+      <!-- TEMU -->
+      <article class="card">
+        <div class="card-icon">🛒</div>
+
+        <h3>Temu</h3>
+
+        <p data-i18n="temu_text">
+          Exploración de productos y oportunidades internacionales.
+        </p>
+
+        <div class="card-actions">
+          <span class="small-btn" aria-disabled="true" data-i18n="coming_soon">
+            Próximamente
+          </span>
+        </div>
+      </article>
+
+      <!-- SHEIN -->
+      <article class="card">
+        <div class="card-icon">✨</div>
+
+        <h3>SHEIN</h3>
+
+        <p data-i18n="shein_text">
+          Moda y productos para futuras oportunidades de promoción.
+        </p>
+
+        <div class="card-actions">
+          <span class="small-btn" aria-disabled="true" data-i18n="coming_soon">
+            Próximamente
+          </span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="circuit-divider" aria-hidden="true">
+    <div class="divider-node"></div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+
+    <div class="section-heading">
+      <div class="section-kicker" data-i18n="projects_kicker">
+        Proyectos
+      </div>
+
+      <h2 class="section-title" data-i18n="projects_title">
+        Tecnología creada para avanzar
+      </h2>
+
+      <p class="section-text" data-i18n="projects_text">
+        Proyectos digitales que combinan inteligencia artificial, software y creación de contenido.
+      </p>
+    </div>
+
+    <div class="featured">
+
+      <div class="featured-content">
+
+        <div class="campaign" data-i18n="campaign">
+          Campaña • 1 de octubre de 2026
+        </div>
+
+        <h3>Lumen Note AI</h3>
+
+        <p class="section-text" data-i18n="lumen_text">
+          Una herramienta de inteligencia artificial para transformar grabaciones de reuniones
+          en transcripciones, resúmenes, tareas y decisiones organizadas.
+        </p>
+
+        <div class="card-actions">
+          <span class="small-btn" aria-disabled="true" data-i18n="lumen_soon">
+            Sitio próximamente
+          </span>
+
+          <a href="#blog" class="small-btn primary" data-i18n="lumen_blog">
+            Ver campaña en el blog
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <div class="circuit-divider" aria-hidden="true">
+    <div class="divider-node"></div>
+  </div>
+
+  <!-- BLOG -->
+  <section id="blog" class="reveal">
+
+    <div class="section-heading">
+      <div class="section-kicker" data-i18n="blog_kicker">
+        Lumière Labs Blog
+      </div>
+
+      <h2 class="section-title" data-i18n="blog_title">
+        Ideas, herramientas y oportunidades
+      </h2>
+
+      <p class="section-text" data-i18n="blog_text">
+        Contenido sobre tecnología, inteligencia artificial, viajes, marketing y proyectos digitales.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card blog-card">
+        <div class="blog-date" data-i18n="blog_date">
+          Próximamente
+        </div>
+
+        <h3 data-i18n="blog_lumen_title">
+          Lumen Note AI: la nueva campaña
+        </h3>
+
+        <p data-i18n="blog_lumen_text">
+          Conoce el proyecto, su propósito y las novedades de la campaña que comienza el 1 de octubre de 2026.
+        </p>
+
+        <div class="card-actions">
+          <span class="small-btn" aria-disabled="true" data-i18n="read_soon">
+            Leer próximamente
+          </span>
+        </div>
+      </article>
+
+      <article class="card blog-card">
+        <div class="blog-date" data-i18n="blog_date">
+          Próximamente
+        </div>
+
+        <h3 data-i18n="blog_travel_title">
+          Viajes y oportunidades internacionales
+        </h3>
+
+        <p data-i18n="blog_travel_text">
+          Guías y contenidos para descubrir destinos, hoteles y experiencias.
+        </p>
+
+        <div class="card-actions">
+          <span class="small-btn" aria-disabled="true" data-i18n="read_soon">
+            Leer próximamente
+          </span>
+        </div>
+      </article>
+
+      <article class="card blog-card">
+        <div class="blog-date" data-i18n="blog_date">
+          Próximamente
+        </div>
+
+        <h3 data-i18n="blog_ai_title">
+          Inteligencia artificial y creación digital
+        </h3>
+
+        <p data-i18n="blog_ai_text">
+          Herramientas, ideas y proyectos para aprovechar las nuevas tecnologías.
+        </p>
+
+        <div class="card-actions">
+          <span class="small-btn" aria-disabled="true" data-i18n="read_soon">
+            Leer próximamente
+          </span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="circuit-divider" aria-hidden="true">
+    <div class="divider-node"></div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+
+    <div class="section-heading">
+      <div class="section-kicker" data-i18n="about_kicker">
+        Lumière Labs
+      </div>
+
+      <h2 class="section-title" data-i18n="about_title">
+        Una plataforma para descubrir y crear
+      </h2>
+    </div>
+
+    <div class="about-box">
+
+      <div class="about-panel">
+        <h3 data-i18n="about_panel_title">
+          Qué encontrarás aquí
+        </h3>
+
+        <ul>
+          <li data-i18n="about_1">Herramientas de inteligencia artificial</li>
+          <li data-i18n="about_2">Contenido digital</li>
+          <li data-i18n="about_3">Viajes y experiencias</li>
+          <li data-i18n="about_4">Productos y servicios</li>
+          <li data-i18n="about_5">Marketing y proyectos digitales</li>
+        </ul>
+      </div>
+
+      <div class="about-panel">
+        <h3 data-i18n="about_global_title">
+          Pensada para un público internacional
+        </h3>
+
+        <p class="section-text" data-i18n="about_global_text">
+          Lumière Labs está diseñada para funcionar en español, inglés, francés, italiano,
+          portugués y chino simplificado, tanto en dispositivos móviles como en computadoras.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="circuit-divider" aria-hidden="true">
+    <div class="divider-node"></div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+
+    <div class="section-heading">
+      <div class="section-kicker" data-i18n="contact_kicker">
+        Conecta
+      </div>
+
+      <h2 class="section-title" data-i18n="contact_title">
+        Sigue nuestros proyectos
+      </h2>
+
+      <p class="section-text" data-i18n="contact_text">
+        Encuentra novedades, contenidos y publicaciones en nuestros canales.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- LUMIERE LABS -->
+      <div class="contact-card">
+        <h3>Lumière Labs</h3>
+
+        <p data-i18n="contact_lumiere">
+          Canal principal de Lumière Labs.
+        </p>
+
+        <div class="card-actions">
+          <a
+            class="small-btn whatsapp"
+            href="https://whatsapp.com/channel/0029VbCj90ZHQbSD46dQ7236"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="small-btn telegram"
+            href="https://t.me/LumiereLabs"
+            target="_blank"
+            rel="noopener"
+          >
+            Telegram
+          </a>
+        </div>
+      </div>
+
+      <!-- TRIP -->
+      <div class="contact-card">
+        <h3>Trip.com</h3>
+
+        <p data-i18n="contact_trip">
+          Viajes y hoteles.
+        </p>
+
+        <div class="card-actions">
+          <a
+            class="small-btn whatsapp"
+            href="https://whatsapp.com/channel/0029VbDzJXy8V0tpqJr4qC17"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="small-btn telegram"
+            href="https://t.me/TripViajesHoteles"
+            target="_blank"
+            rel="noopener"
+          >
+            Telegram
+          </a>
+        </div>
+      </div>
+
+      <!-- EXPRESS -->
+      <div class="contact-card">
+        <h3>Express Solutions</h3>
+
+        <p data-i18n="contact_express">
+          Productos y tecnología.
+        </p>
+
+        <div class="card-actions">
+          <a
+            class="small-btn whatsapp"
+            href="https://whatsapp.com/channel/0029VbEIztY59PwLBx6NbA2t"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="small-btn telegram"
+            href="https://t.me/ExpressSolutionsShop"
+            target="_blank"
+            rel="noopener"
+          >
+            Telegram
+          </a>
+        </div>
+      </div>
+
+      <!-- ALAWAO -->
+      <div class="contact-card">
+        <h3>Alawao</h3>
+
+        <p data-i18n="contact_alawao">
+          Tiendas y servicios para Cuba.
+        </p>
+
+        <div class="card-actions">
+          <a
+            class="small-btn whatsapp"
+            href="https://whatsapp.com/channel/0029VbDoHnZGpLHIpAyqnf1B"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="small-btn telegram"
+            href="https://t.me/AlawaoTiendasCuba"
+            target="_blank"
+            rel="noopener"
+          >
+            Telegram
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <div class="footer-brand">LUMIÈRE LABS</div>
+
+      <div class="footer-copy" data-i18n="footer_copy">
+        AI TOOLS & DIGITAL CONTENT CREATION
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <span>Travel</span>
+      <span>•</span>
+      <span>Marketing</span>
+      <span>•</span>
+      <span>Software</span>
+    </div>
+
+  </div>
+
+  <div class="footer-inner" style="margin-top:25px;">
+    <div class="footer-copy">
+      © <span id="year"></span> Lumière Labs
+    </div>
+
+    <div class="footer-copy" data-i18n="footer_rights">
+      Todos los derechos reservados.
+    </div>
+  </div>
+
+</footer>
+
+<script>
+  /* =========================================
+     TRANSLATIONS — ES / EN / FR / IT / PT / ZH
+  ========================================== */
+
+  const translations = {
+
+    es:{
+      nav_opportunities:"Oportunidades",
+      nav_projects:"Proyectos",
+      nav_blog:"Blog",
+      nav_about:"Nosotros",
+      nav_contact:"Contacto",
+      language:"Idioma",
+
+      hero_eyebrow:"Plataforma digital internacional",
+      hero_btn:"Explorar proyectos",
+      hero_contact:"Conectar",
+
+      opportunities_kicker:"Descubre",
+      opportunities_title:"Oportunidades y experiencias",
+      opportunities_text:"Una selección de viajes, productos, servicios y plataformas digitales.",
+
+      trip_text:"Hoteles, vuelos, viajes y experiencias para descubrir nuevos destinos.",
+      trip_site:"Explorar Trip.com",
+      trip_book:"Reservar en Trip.com",
+
+      express_text:"Selección de productos y compra directa para diferentes necesidades.",
+      express_site:"Explorar tienda",
+      express_buy:"Ver productos y comprar",
+
+      alawao_text:"Productos y servicios con envíos disponibles a todas las provincias de Cuba.",
+      alawao_site:"Explorar Alawao",
+      alawao_buy:"Comprar en Alawao",
+
+      aliexpress_text:"Nuevas oportunidades de productos y compras internacionales.",
+      temu_text:"Exploración de productos y oportunidades internacionales.",
+      shein_text:"Moda y productos para futuras oportunidades de promoción.",
+      coming_soon:"Próximamente",
+
+      projects_kicker:"Proyectos",
+      projects_title:"Tecnología creada para avanzar",
+      projects_text:"Proyectos digitales que combinan inteligencia artificial, software y creación de contenido.",
+
+      campaign:"Campaña • 1 de octubre de 2026",
+      lumen_text:"Una herramienta de inteligencia artificial para transformar grabaciones de reuniones en transcripciones, resúmenes, tareas y decisiones organizadas.",
+      lumen_soon:"Sitio próximamente",
+      lumen_blog:"Ver campaña en el blog",
+
+      blog_kicker:"Lumière Labs Blog",
+      blog_title:"Ideas, herramientas y oportunidades",
+      blog_text:"Contenido sobre tecnología, inteligencia artificial, viajes, marketing y proyectos digitales.",
+      blog_date:"Próximamente",
+      blog_lumen_title:"Lumen Note AI: la nueva campaña",
+      blog_lumen_text:"Conoce el proyecto, su propósito y las novedades de la campaña que comienza el 1 de octubre de 2026.",
+      blog_travel_title:"Viajes y oportunidades internacionales",
+      blog_travel_text:"Guías y contenidos para descubrir destinos, hoteles y experiencias.",
+      blog_ai_title:"Inteligencia artificial y creación digital",
+      blog_ai_text:"Herramientas, ideas y proyectos para aprovechar las nuevas tecnologías.",
+      read_soon:"Leer próximamente",
+
+      about_kicker:"Lumière Labs",
+      about_title:"Una plataforma para descubrir y crear",
+      about_panel_title:"Qué encontrarás aquí",
+      about_1:"Herramientas de inteligencia artificial",
+      about_2:"Contenido digital",
+      about_3:"Viajes y experiencias",
+      about_4:"Productos y servicios",
+      about_5:"Marketing y proyectos digitales",
+      about_global_title:"Pensada para un público internacional",
+      about_global_text:"Lumière Labs está diseñada para funcionar en español, inglés, francés, italiano, portugués y chino simplificado, tanto en dispositivos móviles como en computadoras.",
+
+      contact_kicker:"Conecta",
+      contact_title:"Sigue nuestros proyectos",
+      contact_text:"Encuentra novedades, contenidos y publicaciones en nuestros canales.",
+      contact_lumiere:"Canal principal de Lumière Labs.",
+      contact_trip:"Viajes y hoteles.",
+      contact_express:"Productos y tecnología.",
+      contact_alawao:"Tiendas y servicios para Cuba.",
+
+      footer_copy:"AI TOOLS & DIGITAL CONTENT CREATION",
+      footer_rights:"Todos los derechos reservados."
+    },
+
+    en:{
+      nav_opportunities:"Opportunities",
+      nav_projects:"Projects",
+      nav_blog:"Blog",
+      nav_about:"About",
+      nav_contact:"Contact",
+      language:"Language",
+
+      hero_eyebrow:"International digital platform",
+      hero_btn:"Explore projects",
+      hero_contact:"Connect",
+
+      opportunities_kicker:"Discover",
+      opportunities_title:"Opportunities & experiences",
+      opportunities_text:"A selection of travel, products, services and digital platforms.",
+
+      trip_text:"Hotels, flights, travel and experiences for discovering new destinations.",
+      trip_site:"Explore Trip.com",
+      trip_book:"Book on Trip.com",
+
+      express_text:"A selection of products with direct purchasing options.",
+      express_site:"Explore store",
+      express_buy:"View products & buy",
+
+      alawao_text:"Products and services with shipping available to every province of Cuba.",
+      alawao_site:"Explore Alawao",
+      alawao_buy:"Shop on Alawao",
+
+      aliexpress_text:"New international product and shopping opportunities.",
+      temu_text:"International products and opportunities.",
+      shein_text:"Fashion and products for future promotional opportunities.",
+      coming_soon:"Coming soon",
+
+      projects_kicker:"Projects",
+      projects_title:"Technology built to move forward",
+      projects_text:"Digital projects combining artificial intelligence, software and content creation.",
+
+      campaign:"Campaign • October 1, 2026",
+      lumen_text:"An AI tool that transforms meeting recordings into organized transcripts, summaries, tasks and decisions.",
+      lumen_soon:"Website coming soon",
+      lumen_blog:"View campaign on the blog",
+
+      blog_kicker:"Lumière Labs Blog",
+      blog_title:"Ideas, tools & opportunities",
+      blog_text:"Content about technology, AI, travel, marketing and digital projects.",
+      blog_date:"Coming soon",
+      blog_lumen_title:"Lumen Note AI: the new campaign",
+      blog_lumen_text:"Discover the project, its purpose and the campaign launching October 1, 2026.",
+      blog_travel_title:"Travel & international opportunities",
+      blog_travel_text:"Guides and content for discovering destinations, hotels and experiences.",
+      blog_ai_title:"AI & digital creation",
+      blog_ai_text:"Tools, ideas and projects for making the most of new technologies.",
+      read_soon:"Read soon",
+
+      about_kicker:"Lumière Labs",
+      about_title:"A platform to discover and create",
+      about_panel_title:"What you'll find here",
+      about_1:"Artificial intelligence tools",
+      about_2:"Digital content",
+      about_3:"Travel and experiences",
+      about_4:"Products and services",
+      about_5:"Marketing and digital projects",
+      about_global_title:"Built for an international audience",
+      about_global_text:"Lumière Labs is designed to work in Spanish, English, French, Italian, Portuguese and Simplified Chinese on mobile devices and computers.",
+
+      contact_kicker:"Connect",
+      contact_title:"Follow our projects",
+      contact_text:"Find updates, content and publications through our channels.",
+      contact_lumiere:"Main Lumière Labs channel.",
+      contact_trip:"Travel and hotels.",
+      contact_express:"Products and technology.",
+      contact_alawao:"Stores and services for Cuba.",
+
+      footer_copy:"AI TOOLS & DIGITAL CONTENT CREATION",
+      footer_rights:"All rights reserved."
+    },
+
+    fr:{
+      nav_opportunities:"Opportunités",
+      nav_projects:"Projets",
+      nav_blog:"Blog",
+      nav_about:"À propos",
+      nav_contact:"Contact",
+      language:"Langue",
+
+      hero_eyebrow:"Plateforme numérique internationale",
+      hero_btn:"Explorer les projets",
+      hero_contact:"Se connecter",
+
+      opportunities_kicker:"Découvrir",
+      opportunities_title:"Opportunités et expériences",
+      opportunities_text:"Une sélection de voyages, produits, services et plateformes numériques.",
+
+      trip_text:"Hôtels, vols, voyages et expériences pour découvrir de nouvelles destinations.",
+      trip_site:"Explorer Trip.com",
+      trip_book:"Réserver sur Trip.com",
+
+      express_text:"Une sélection de produits avec achat direct.",
+      express_site:"Explorer la boutique",
+      express_buy:"Voir les produits et acheter",
+
+      alawao_text:"Produits et services avec livraison dans toutes les provinces de Cuba.",
+      alawao_site:"Explorer Alawao",
+      alawao_buy:"Acheter sur Alawao",
+
+      aliexpress_text:"De nouvelles opportunités de produits et d'achats internationaux.",
+      temu_text:"Produits et opportunités internationales.",
+      shein_text:"Mode et produits pour de futures opportunités promotionnelles.",
+      coming_soon:"Bientôt disponible",
+
+      projects_kicker:"Projets",
+      projects_title:"Une technologie conçue pour avancer",
+      projects_text:"Des projets numériques combinant intelligence artificielle, logiciels et création de contenu.",
+
+      campaign:"Campagne • 1er octobre 2026",
+      lumen_text:"Un outil d'IA qui transforme les enregistrements de réunions en transcriptions, résumés, tâches et décisions organisées.",
+      lumen_soon:"Site bientôt disponible",
+      lumen_blog:"Voir la campagne",
+
+      blog_kicker:"Blog Lumière Labs",
+      blog_title:"Idées, outils et opportunités",
+      blog_text:"Contenus sur la technologie, l'IA, les voyages, le marketing et les projets numériques.",
+      blog_date:"Bientôt disponible",
+      blog_lumen_title:"Lumen Note AI : la nouvelle campagne",
+      blog_lumen_text:"Découvrez le projet et sa campagne qui débutera le 1er octobre 2026.",
+      blog_travel_title:"Voyages et opportunités internationales",
+      blog_travel_text:"Guides et contenus pour découvrir des destinations, hôtels et expériences.",
+      blog_ai_title:"IA et création numérique",
+      blog_ai_text:"Outils, idées et projets pour profiter des nouvelles technologies.",
+      read_soon:"Lire bientôt",
+
+      about_kicker:"Lumière Labs",
+      about_title:"Une plateforme pour découvrir et créer",
+      about_panel_title:"Ce que vous trouverez ici",
+      about_1:"Outils d'intelligence artificielle",
+      about_2:"Contenu numérique",
+      about_3:"Voyages et expériences",
+      about_4:"Produits et services",
+      about_5:"Marketing et projets numériques",
+      about_global_title:"Pensée pour un public international",
+      about_global_text:"Lumière Labs est conçue pour fonctionner en espagnol, anglais, français, italien, portugais et chinois simplifié sur mobile et ordinateur.",
+
+      contact_kicker:"Connecter",
+      contact_title:"Suivez nos projets",
+      contact_text:"Retrouvez nos nouveautés, contenus et publications sur nos canaux.",
+      contact_lumiere:"Canal principal de Lumière Labs.",
+      contact_trip:"Voyages et hôtels.",
+      contact_express:"Produits et technologie.",
+      contact_alawao:"Boutiques et services pour Cuba.",
+
+      footer_copy:"AI TOOLS & DIGITAL CONTENT CREATION",
+      footer_rights:"Tous droits réservés."
+    },
+
+    it:{
+      nav_opportunities:"Opportunità",
+      nav_projects:"Progetti",
+      nav_blog:"Blog",
+      nav_about:"Chi siamo",
+      nav_contact:"Contatti",
+      language:"Lingua",
+
+      hero_eyebrow:"Piattaforma digitale internazionale",
+      hero_btn:"Esplora i progetti",
+      hero_contact:"Connetti",
+
+      opportunities_kicker:"Scopri",
+      opportunities_title:"Opportunità ed esperienze",
+      opportunities_text:"Una selezione di viaggi, prodotti, servizi e piattaforme digitali.",
+
+      trip_text:"Hotel, voli, viaggi ed esperienze per scoprire nuove destinazioni.",
+      trip_site:"Esplora Trip.com",
+      trip_book:"Prenota su Trip.com",
+
+      express_text:"Una selezione di prodotti con acquisto diretto.",
+      express_site:"Esplora il negozio",
+      express_buy:"Vedi prodotti e acquista",
+
+      alawao_text:"Prodotti e servizi con spedizione disponibile in tutte le province di Cuba.",
+      alawao_site:"Esplora Alawao",
+      alawao_buy:"Acquista su Alawao",
+
+      aliexpress_text:"Nuove opportunità internazionali per prodotti e acquisti.",
+      temu_text:"Prodotti e opportunità internazionali.",
+      shein_text:"Moda e prodotti per future opportunità promozionali.",
+      coming_soon:"Prossimamente",
+
+      projects_kicker:"Progetti",
+      projects_title:"Tecnologia creata per andare avanti",
+      projects_text:"Progetti digitali che combinano intelligenza artificiale, software e creazione di contenuti.",
+
+      campaign:"Campagna • 1 ottobre 2026",
+      lumen_text:"Uno strumento di IA che trasforma le registrazioni delle riunioni in trascrizioni, riepiloghi, attività e decisioni organizzate.",
+      lumen_soon:"Sito prossimamente",
+      lumen_blog:"Vedi la campagna",
+
+      blog_kicker:"Blog Lumière Labs",
+      blog_title:"Idee, strumenti e opportunità",
+      blog_text:"Contenuti su tecnologia, IA, viaggi, marketing e progetti digitali.",
+      blog_date:"Prossimamente",
+      blog_lumen_title:"Lumen Note AI: la nuova campagna",
+      blog_lumen_text:"Scopri il progetto e la campagna che inizierà il 1 ottobre 2026.",
+      blog_travel_title:"Viaggi e opportunità internazionali",
+      blog_travel_text:"Guide e contenuti per scoprire destinazioni, hotel ed esperienze.",
+      blog_ai_title:"IA e creazione digitale",
+      blog_ai_text:"Strumenti, idee e progetti per sfruttare le nuove tecnologie.",
+      read_soon:"Leggi prossimamente",
+
+      about_kicker:"Lumière Labs",
+      about_title:"Una piattaforma per scoprire e creare",
+      about_panel_title:"Cosa troverai qui",
+      about_1:"Strumenti di intelligenza artificiale",
+      about_2:"Contenuti digitali",
+      about_3:"Viaggi ed esperienze",
+      about_4:"Prodotti e servizi",
+      about_5:"Marketing e progetti digitali",
+      about_global_title:"Pensata per un pubblico internazionale",
+      about_global_text:"Lumière Labs è progettata per funzionare in spagnolo, inglese, francese, italiano, portoghese e cinese semplificato su dispositivi mobili e computer.",
+
+      contact_kicker:"Connetti",
+      contact_title:"Segui i nostri progetti",
+      contact_text:"Trova aggiornamenti, contenuti e pubblicazioni sui nostri canali.",
+      contact_lumiere:"Canale principale di Lumière Labs.",
+      contact_trip:"Viaggi e hotel.",
+      contact_express:"Prodotti e tecnologia.",
+      contact_alawao:"Negozi e servizi per Cuba.",
+
+      footer_copy:"AI TOOLS & DIGITAL CONTENT CREATION",
+      footer_rights:"Tutti i diritti riservati."
+    },
+
+    pt:{
+      nav_opportunities:"Oportunidades",
+      nav_projects:"Projetos",
+      nav_blog:"Blog",
+      nav_about:"Sobre nós",
+      nav_contact:"Contato",
+      language:"Idioma",
+
+      hero_eyebrow:"Plataforma digital internacional",
+      hero_btn:"Explorar projetos",
+      hero_contact:"Conectar",
+
+      opportunities_kicker:"Descubra",
+      opportunities_title:"Oportunidades e experiências",
+      opportunities_text:"Uma seleção de viagens, produtos, serviços e plataformas digitais.",
+
+      trip_text:"Hotéis, voos, viagens e experiências para descobrir novos destinos.",
+      trip_site:"Explorar Trip.com",
+      trip_book:"Reservar na Trip.com",
+
+      express_text:"Uma seleção de produtos com opções de compra direta.",
+      express_site:"Explorar loja",
+      express_buy:"Ver produtos e comprar",
+
+      alawao_text:"Produtos e serviços com envio disponível para todas as províncias de Cuba.",
+      alawao_site:"Explorar Alawao",
+      alawao_buy:"Comprar na Alawao",
+
+      aliexpress_text:"Novas oportunidades internacionais de produtos e compras.",
+      temu_text:"Produtos e oportunidades internacionais.",
+      shein_text:"Moda e produtos para futuras oportunidades de promoção.",
+      coming_soon:"Em breve",
+
+      projects_kicker:"Projetos",
+      projects_title:"Tecnologia criada para avançar",
+      projects_text:"Projetos digitais que combinam inteligência artificial, software e criação de conteúdo.",
+
+      campaign:"Campanha • 1º de outubro de 2026",
+      lumen_text:"Uma ferramenta de IA que transforma gravações de reuniões em transcrições, resumos, tarefas e decisões organizadas.",
+      lumen_soon:"Site em breve",
+      lumen_blog:"Ver campanha",
+
+      blog_kicker:"Blog Lumière Labs",
+      blog_title:"Ideias, ferramentas e oportunidades",
+      blog_text:"Conteúdo sobre tecnologia, IA, viagens, marketing e projetos digitais.",
+      blog_date:"Em breve",
+      blog_lumen_title:"Lumen Note AI: a nova campanha",
+      blog_lumen_text:"Conheça o projeto e a campanha que começa em 1º de outubro de 2026.",
+      blog_travel_title:"Viagens e oportunidades internacionais",
+      blog_travel_text:"Guias e conteúdos para descobrir destinos, hotéis e experiências.",
+      blog_ai_title:"IA e criação digital",
+      blog_ai_text:"Ferramentas, ideias e projetos para aproveitar as novas tecnologias.",
+      read_soon:"Ler em breve",
+
+      about_kicker:"Lumière Labs",
+      about_title:"Uma plataforma para descobrir e criar",
+      about_panel_title:"O que você encontrará aqui",
+      about_1:"Ferramentas de inteligência artificial",
+      about_2:"Conteúdo digital",
+      about_3:"Viagens e experiências",
+      about_4:"Produtos e serviços",
+      about_5:"Marketing e projetos digitais",
+      about_global_title:"Criada para um público internacional",
+      about_global_text:"Lumière Labs foi projetada para funcionar em espanhol, inglês, francês, italiano, português e chinês simplificado em dispositivos móveis e computadores.",
+
+      contact_kicker:"Conecte-se",
+      contact_title:"Acompanhe nossos projetos",
+      contact_text:"Encontre novidades, conteúdos e publicações em nossos canais.",
+      contact_lumiere:"Canal principal da Lumière Labs.",
+      contact_trip:"Viagens e hotéis.",
+      contact_express:"Produtos e tecnologia.",
+      contact_alawao:"Lojas e serviços para Cuba.",
+
+      footer_copy:"AI TOOLS & DIGITAL CONTENT CREATION",
+      footer_rights:"Todos os direitos reservados."
+    },
+
+    zh:{
+      nav_opportunities:"机会",
+      nav_projects:"项目",
+      nav_blog:"博客",
+      nav_about:"关于我们",
+      nav_contact:"联系我们",
+      language:"语言",
+
+      hero_eyebrow:"国际数字平台",
+      hero_btn:"探索项目",
+      hero_contact:"联系",
+
+      opportunities_kicker:"发现",
+      opportunities_title:"机会与体验",
+      opportunities_text:"精选旅行、产品、服务和数字平台。",
+
+      trip_text:"酒店、航班、旅行和体验，帮助你探索新的目的地。",
+      trip_site:"探索 Trip.com",
+      trip_book:"在 Trip.com 预订",
+
+      express_text:"精选产品及直接购买选择。",
+      express_site:"探索商店",
+      express_buy:"查看产品并购买",
+
+      alawao_text:"产品和服务，可配送至古巴所有省份。",
+      alawao_site:"探索 Alawao",
+      alawao_buy:"在 Alawao 购买",
+
+      aliexpress_text:"新的国际产品和购物机会。",
+      temu_text:"国际产品和机会。",
+      shein_text:"时尚与产品，以及未来的推广机会。",
+      coming_soon:"即将推出",
+
+      projects_kicker:"项目",
+      projects_title:"为前进而打造的技术",
+      projects_text:"结合人工智能、软件和数字内容创作的项目。",
+
+      campaign:"活动 • 2026年10月1日",
+      lumen_text:"一款人工智能工具，可将会议录音转换为整理后的文字记录、摘要、任务和决定。",
+      lumen_soon:"网站即将推出",
+      lumen_blog:"查看活动",
+
+      blog_kicker:"Lumière Labs 博客",
+      blog_title:"创意、工具与机会",
+      blog_text:"关于科技、人工智能、旅行、营销和数字项目的内容。",
+      blog_date:"即将推出",
+      blog_lumen_title:"Lumen Note AI：全新活动",
+      blog_lumen_text:"了解项目及将于2026年10月1日开始的活动。",
+      blog_travel_title:"旅行与国际机会",
+      blog_travel_text:"探索目的地、酒店和体验的指南与内容。",
+      blog_ai_title:"人工智能与数字创作",
+      blog_ai_text:"利用新技术的工具、创意和项目。",
+      read_soon:"即将阅读",
+
+      about_kicker:"Lumière Labs",
+      about_title:"发现与创造的平台",
+      about_panel_title:"你将在这里找到",
+      about_1:"人工智能工具",
+      about_2:"数字内容",
+      about_3:"旅行与体验",
+      about_4:"产品与服务",
+      about_5:"营销与数字项目",
+      about_global_title:"面向国际用户",
+      about_global_text:"Lumière Labs 支持西班牙语、英语、法语、意大利语、葡萄牙语和简体中文，并适用于手机和电脑。",
+
+      contact_kicker:"连接",
+      contact_title:"关注我们的项目",
+      contact_text:"通过我们的频道获取最新动态、内容和发布信息。",
+      contact_lumiere:"Lumière Labs 官方频道。",
+      contact_trip:"旅行与酒店。",
+      contact_express:"产品与科技。",
+      contact_alawao:"古巴商店与服务。",
+
+      footer_copy:"AI TOOLS & DIGITAL CONTENT CREATION",
+      footer_rights:"版权所有。"
+    }
+  };
+
+  /* =========================================
+     LANGUAGE SYSTEM
+  ========================================== */
+
+  function setLanguage(lang){
+
+    const dictionary = translations[lang] || translations.es;
+
+    document.documentElement.lang =
+      lang === "zh" ? "zh-CN" : lang;
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+      const key = element.getAttribute("data-i18n");
+
+      if(dictionary[key]){
+        element.textContent = dictionary[key];
+      }
+    });
+
+    document.getElementById("languageSelect").value = lang;
+
+    document.querySelectorAll(".lang-btn").forEach(button => {
+      button.classList.toggle(
+        "active",
+        button.dataset.lang === lang
+      );
+    });
+
+    try{
+      localStorage.setItem("lumiere-language",lang);
+    }catch(e){}
+  }
+
+  const languageSelect =
+    document.getElementById("languageSelect");
+
+  languageSelect.addEventListener("change",event=>{
+    setLanguage(event.target.value);
+  });
+
+  document.querySelectorAll(".lang-btn").forEach(button=>{
+    button.addEventListener("click",()=>{
+      setLanguage(button.dataset.lang);
+
+      document.getElementById("mobileMenu")
+        .classList.remove("open");
+
+      document.getElementById("menuBtn")
+        .setAttribute("aria-expanded","false");
+    });
+  });
+
+  let savedLanguage = "es";
+
+  try{
+    savedLanguage =
+      localStorage.getItem("lumiere-language") || "es";
+  }catch(e){}
+
+  setLanguage(savedLanguage);
+
+  /* =========================================
+     MOBILE MENU
+  ========================================== */
+
+  const menuBtn =
+    document.getElementById("menuBtn");
+
+  const mobileMenu =
+    document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click",()=>{
+
+    const open =
+      mobileMenu.classList.toggle("open");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      String(open)
+    );
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click",()=>{
+      mobileMenu.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded","false");
+    });
+  });
+
+  /* =========================================
+     SCROLL REVEAL
+  ========================================== */
+
+  const observer =
+    new IntersectionObserver(
+      entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold:.10
+      }
+    );
+
+  document.querySelectorAll(".reveal").forEach(element=>{
+    observer.observe(element);
+  });
+
+  /* =========================================
+     YEAR
+  ========================================== */
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
